@@ -11,6 +11,12 @@ class Maps extends CI_Controller
 
     public function index()
     {
+        $kode = $this->input->get('kode');
+        if ($kode) {
+            $this->db->where('kode_wilayah', $kode);
+        }
+        $this->db->order_by('kode_wilayah', 'asc');
+
         $dataWilayah = $this->db->get('dpd_wilayah')->result_array(); // jumlah row 11
         foreach ($dataWilayah as $key => $item) {
             $dataStruktural = $this->db->get_where('dpd_struktural', ['id_dpd' => $item['id_dpd']])->result();

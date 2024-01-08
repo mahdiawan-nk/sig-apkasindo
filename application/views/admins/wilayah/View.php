@@ -20,6 +20,7 @@
                                 <th>#</th>
                                 <th>Nama DPD</th>
                                 <th>Kordinat</th>
+                                <th>Aalamat</th>
                                 <th>ACT</th>
                             </tr>
                         </thead>
@@ -33,6 +34,7 @@
                                         Lat :<?= $kordinat[0] ?><br>
                                         Lng : <?= $kordinat[1] ?>
                                     </td>
+                                    <td><?= $item->alamat ?></td>
                                     <td>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                                             <button type="button" class="btn btn-dark waves-effect waves-light" onclick="previewMaps('<?= $item->nama_dpd ?>','<?= $item->kordinat_wilayah ?>')">Lihat</button>
@@ -71,7 +73,8 @@
 </div>
 
 <script>
-     $('#data-table').DataTable();
+    $('#data-table').DataTable();
+
     function deleted(args) {
         Swal.fire({
             title: "Are you sure?",

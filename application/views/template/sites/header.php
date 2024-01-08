@@ -11,10 +11,8 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="<?= base_url() ?>" class="active">Home</a></li>
-                        <li><a href="<?= base_url('maps') ?>">Mapas</a></li>
-                        <!-- <li><a href="deals.html">Informasi</a></li> -->
-                        <!-- <li><a href="reservation.html">Reservation</a></li>
-                            <li><a href="reservation.html">Book Yours</a></li> -->
+                        <li><a href="<?= base_url('list-dpd') ?>">DPD Apkasindo</a></li>
+                        <li><a href="<?= base_url('statistik') ?>">Staistik Perkebunan</a></li>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>

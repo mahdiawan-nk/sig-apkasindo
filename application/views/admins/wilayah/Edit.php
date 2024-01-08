@@ -21,14 +21,20 @@
                     <div class="form-group row mb-3">
                         <label for="inputEmail3" class="col-3 col-form-label">Titik Lokasi</label>
                         <div class="col-9">
-                            <input type="text" class="form-control" name="kordinat_wilayah" placeholder="nama wilayah" readonly required>
+                            <input type="text" class="form-control" name="kordinat_wilayah" placeholder="nama wilayah" value="<?= $data->kordinat_wilayah ?>" readonly required>
                             <div id="map"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="inputEmail3" class="col-3 col-form-label">Alamat DPD</label>
+                        <div class="col-9">
+                            <textarea name="alamat" id="" cols="30" rows="5" class="form-control"><?= $data->alamat ?></textarea>
                         </div>
                     </div>
                     <div class="form-group mb-0 justify-content-end row">
                         <div class="col-9">
                             <button type="submit" class="btn btn-info waves-effect waves-light">Simpan</button>
-                            <a href="<?=base_url('admin/datawilayah')?>" class="btn btn-secondary waves-effect waves-light">Kembali</a>
+                            <a href="<?= base_url('admin/datawilayah') ?>" class="btn btn-secondary waves-effect waves-light">Kembali</a>
                         </div>
                     </div>
                 </form>
@@ -53,7 +59,7 @@
     });
     map.addControl(geocoder, 'top-right');
     var marker;
-    
+
     marker = new mapboxgl.Marker()
         .setLngLat([parseFloat(kordinats[0]), parseFloat(kordinats[1])])
         .addTo(map);

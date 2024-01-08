@@ -141,7 +141,8 @@
                             <?php endforeach ?>
                         </ul>
                         <div class="card-footer">
-                            Jumlah Anggota : <?= $maps->jmlanggota ?>
+                            Jumlah Anggota : <?= $maps->jmlanggota ?> <br>
+                            Alamat : <?= $maps->alamat ?>
                         </div>
                     </div>
                 </div>
@@ -174,62 +175,65 @@
             map.setStyle('mapbox://styles/mapbox/' + layerId);
         };
     }
-    let regency = [1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1471, 1473]
-    const colors = [
-        "#FF0000", // Merah
-        "#00FF00", // Hijau
-        "#0000FF", // Biru
-        "#FFFF00", // Kuning
-        "#FF00FF", // Ungu
-        "#00FFFF", // Cyan
-        "#FFA500", // Oranye
-        "#800080", // Ungu tua
-        "#008000", // Hijau tua
-        "#008080", // Biru-hijau
-        "#800000" // Merah tua
-    ];
-    regency.forEach((kode, i) => {
-        $.ajax({
-            url: '<?= base_url('maps/proxy') ?>',
-            method: 'GET',
-            data: {
-                url: `https://seta.silaper.com/assets/wilayah-indonesia-master/data/geojson/regency/${kode}.geojson`
-            },
-            success: function(data) {
-                map.addSource('riau' + i, {
-                    'type': 'geojson',
-                    'data': data.features[0]
-                });
+    let regency = []
+    <?php foreach ($data as $item) : ?>
+        regency.push(<?= $item->kode_wilayah ?>)
+    <?php endforeach ?>
+    // const colors = [
+    //     "#FF0000", // Merah
+    //     "#00FF00", // Hijau
+    //     "#0000FF", // Biru
+    //     "#FFFF00", // Kuning
+    //     "#FF00FF", // Ungu
+    //     "#00FFFF", // Cyan
+    //     "#FFA500", // Oranye
+    //     "#800080", // Ungu tua
+    //     "#008000", // Hijau tua
+    //     "#008080", // Biru-hijau
+    //     "#800025" // Merah tua
+    // ];
+    // regency.forEach((kode, i) => {
+    //     $.ajax({
+    //         url: '<?= base_url('maps/proxy') ?>',
+    //         method: 'GET',
+    //         data: {
+    //             url: `https://seta.silaper.com/assets/wilayah-indonesia-master/data/geojson/regency/${kode}.geojson`
+    //         },
+    //         success: function(data) {
+    //             map.addSource('riau' + i, {
+    //                 'type': 'geojson',
+    //                 'data': data.features[0]
+    //             });
 
-                // Add a new layer to visualize the polygon.
-                map.addLayer({
-                    'id': 'riau' + i,
-                    'type': 'fill',
-                    'source': 'riau' + i, // reference the data source
-                    'layout': {},
-                    'paint': {
-                        'fill-color': colors[i], // blue color fill
-                        'fill-opacity': 0.5
-                    }
-                });
-                // Add a black outline around the polygon.
-                map.addLayer({
-                    'id': 'outline' + i,
-                    'type': 'line',
-                    'source': 'riau' + i,
-                    'layout': {},
-                    'paint': {
-                        'line-color': '#fff',
-                        'line-width': 1
-                    }
-                });
+    //             // Add a new layer to visualize the polygon.
+    //             map.addLayer({
+    //                 'id': 'riau' + i,
+    //                 'type': 'fill',
+    //                 'source': 'riau' + i, // reference the data source
+    //                 'layout': {},
+    //                 'paint': {
+    //                     'fill-color': colors[i], // blue color fill
+    //                     'fill-opacity': 0.5
+    //                 }
+    //             });
+    //             // Add a black outline around the polygon.
+    //             map.addLayer({
+    //                 'id': 'outline' + i,
+    //                 'type': 'line',
+    //                 'source': 'riau' + i,
+    //                 'layout': {},
+    //                 'paint': {
+    //                     'line-color': '#fff',
+    //                     'line-width': 1
+    //                 }
+    //             });
 
-            },
-            error: function(xhr, status, error) {
-                console.error(error); // Menangani kesalahan jika terjadi
-            }
-        });
-    });
+    //         },
+    //         error: function(xhr, status, error) {
+    //             console.error(error); // Menangani kesalahan jika terjadi
+    //         }
+    //     });
+    // });
 
 
 
@@ -252,7 +256,7 @@
             curve: 2,
             bearing: 50,
             center: kordinat[index],
-            zoom: 15,
+            zoom: 10,
             pitch: 50
         }
     })
@@ -268,6 +272,7 @@
                             <div class="card-body p-0">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">Jumlah Anggota : ` + '<?= $list->jmlanggota ?>' + `</li>
+                                    <li class="list-group-item">Alamat : ` + '<?= $list->alamat ?>' + `</li>
                                 </ul>
                             </div>
                     </div>`);
@@ -294,7 +299,7 @@
         elm.scrollIntoView()
         map.flyTo({
             center: kordinat,
-            zoom: 7,
+            zoom: 10,
             speed: 1,
             curve: 3,
             easing(t) {
@@ -336,9 +341,9 @@
             elm.scrollIntoView()
             map.flyTo({
                 center: kor,
-                zoom: 15,
+                zoom: 10,
                 speed: 1,
-                curve: 3,
+                curve: 2,
                 easing(t) {
                     return t;
                 }
@@ -349,7 +354,7 @@
             elm.scrollIntoView()
             map.flyTo({
                 center: [101.45159911019914, 0.5262897773849602],
-                zoom: 9,
+                zoom: 12,
                 speed: 1,
                 curve: 3,
                 easing(t) {

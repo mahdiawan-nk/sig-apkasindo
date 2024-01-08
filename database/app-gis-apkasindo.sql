@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 10 Des 2023 pada 07.24
+-- Waktu pembuatan: 08 Jan 2024 pada 14.01
 -- Versi server: 8.0.30
 -- Versi PHP: 7.3.9
 
@@ -2371,6 +2371,28 @@ INSERT INTO `dpd_keanggotaan` (`id_keanggotaan`, `id_dpd`, `no_kta`, `nama`, `ko
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `dpd_luaslahan`
+--
+
+CREATE TABLE `dpd_luaslahan` (
+  `id_luaslahan` int NOT NULL,
+  `id_dpd` int NOT NULL,
+  `tahun` year NOT NULL,
+  `luas_lahan` varchar(25) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `dpd_luaslahan`
+--
+
+INSERT INTO `dpd_luaslahan` (`id_luaslahan`, `id_dpd`, `tahun`, `luas_lahan`) VALUES
+(1, 1, '2019', '100000'),
+(3, 1, '2020', '755992'),
+(4, 2, '2019', '100000');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `dpd_struktural`
 --
 
@@ -2430,26 +2452,46 @@ INSERT INTO `dpd_struktural` (`id_struktural`, `id_dpd`, `nama`, `keterangan`, `
 
 CREATE TABLE `dpd_wilayah` (
   `id_dpd` int NOT NULL,
+  `kode_wilayah` int NOT NULL,
   `nama_dpd` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `kordinat_wilayah` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `kordinat_wilayah` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `alamat` varchar(128) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `dpd_wilayah`
 --
 
-INSERT INTO `dpd_wilayah` (`id_dpd`, `nama_dpd`, `kordinat_wilayah`) VALUES
-(1, 'Bengkalis', '102.12174204262891,1.5683319383509797'),
-(2, 'Kampar', '101.21840823934781,0.4161152544640174'),
-(3, 'Indragiri Hulu', '102.3603928700199,-0.4346954152835707'),
-(4, 'Rokan Hulu', '100.39297836967063,0.8835480518546461'),
-(5, 'Kota Dumai', '101.44635240791143,1.6633381881521956'),
-(6, 'Rokan Hilir', '100.72139518262406,2.072527318664328'),
-(7, 'Indragiri Hilir', '103.24558837747634,-0.31158720386520145'),
-(8, 'Pelalawn', '101.96923412074796,0.39488430926759577'),
-(9, 'Siak', '101.68529254857924,0.7334306988947077'),
-(10, 'Kota Pekanbaru', '101.45159911019914,0.5262897773849602'),
-(11, 'Kuantan Singingi', '101.59143451277134,-0.4649504013773367');
+INSERT INTO `dpd_wilayah` (`id_dpd`, `kode_wilayah`, `nama_dpd`, `kordinat_wilayah`, `alamat`) VALUES
+(1, 1403, 'Bengkalis', '102.12174204262891,1.5683319383509797', 't4esssafdasdf'),
+(2, 1401, 'Kampar', '101.21840823934781,0.4161152544640174', NULL),
+(3, 1402, 'Indragiri Hulu', '102.3603928700199,-0.4346954152835707', NULL),
+(4, 1406, 'Rokan Hulu', '100.39297836967063,0.8835480518546461', NULL),
+(5, 1473, 'Kota Dumai', '101.44635240791143,1.6633381881521956', NULL),
+(6, 1407, 'Rokan Hilir', '100.72139518262406,2.072527318664328', NULL),
+(7, 1404, 'Indragiri Hilir', '103.24558837747634,-0.31158720386520145', NULL),
+(8, 1405, 'Pelalawn', '101.96923412074796,0.39488430926759577', NULL),
+(9, 1408, 'Siak', '101.68529254857924,0.7334306988947077', NULL),
+(10, 1471, 'Kota Pekanbaru', '101.45159911019914,0.5262897773849602', NULL),
+(11, 1409, 'Kuantan Singingi', '101.59143451277134,-0.4649504013773367', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tentang`
+--
+
+CREATE TABLE `tentang` (
+  `id_tentang` int NOT NULL,
+  `isi` text COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `tentang`
+--
+
+INSERT INTO `tentang` (`id_tentang`, `isi`) VALUES
+(1, '                                        <h2 style=\"box-sizing: inherit; margin-right: 0px; margin-bottom: 20px; margin-left: 0px; line-height: 36px; font-size: 30px; padding: 0px; border: 0px; outline: 0px; color: rgb(42, 42, 42); vertical-align: baseline; text-transform: capitalize; font-family: \" open=\"\" sans\",=\"\" sans-serif;=\"\" background-color:=\"\" rgb(255,=\"\" 255,=\"\" 255);\"=\"\">SELAYANG PANDANG</h2><p style=\"box-sizing: inherit; margin-right: 0px; margin-bottom: 20px; margin-left: 0px; line-height: 36px; font-size: 30px; padding: 0px; border: 0px; outline: 0px; color: rgb(42, 42, 42); vertical-align: baseline; text-transform: capitalize; font-family: \" open=\"\" sans\",=\"\" sans-serif;=\"\" background-color:=\"\" rgb(255,=\"\" 255,=\"\" 255);\"=\"\"><span style=\"color: rgb(175, 175, 175); font-size: 16px; text-transform: none;\">APKASINDO adalah organisasi profesi petani kelapa sawit yang disahkan dan dibina oleh Kementerian Pertanian RI cq Direktorat Jenderal Perkebunan dan Badan Eksekutif Gabungan Asosiasi Petani Perkebunan Republik Indonesia (GAPPERINDO) dan Dewan Minyak Sawit Indonesia (DMSI). APKASINDO terbentuk pada tahun 2000, difasilitasi Pemerintah c/q Kementerian Pertanian Republik Indonesia, sebagai Wadah Pemersatu Petani Kelapa Sawit Indonesia. APKASINDO saat ini telah tersebar di 22 provinsi dan 144 Kabupaten/Kota penghasil kelapa sawit di Indonesia mulai dari Nangroe Aceh Darussalam sampai Provinsi Papua.</span></p>                                ');
 
 --
 -- Indexes for dumped tables
@@ -2474,6 +2516,12 @@ ALTER TABLE `dpd_keanggotaan`
   ADD PRIMARY KEY (`id_keanggotaan`);
 
 --
+-- Indeks untuk tabel `dpd_luaslahan`
+--
+ALTER TABLE `dpd_luaslahan`
+  ADD PRIMARY KEY (`id_luaslahan`);
+
+--
 -- Indeks untuk tabel `dpd_struktural`
 --
 ALTER TABLE `dpd_struktural`
@@ -2484,6 +2532,12 @@ ALTER TABLE `dpd_struktural`
 --
 ALTER TABLE `dpd_wilayah`
   ADD PRIMARY KEY (`id_dpd`);
+
+--
+-- Indeks untuk tabel `tentang`
+--
+ALTER TABLE `tentang`
+  ADD PRIMARY KEY (`id_tentang`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -2506,6 +2560,12 @@ ALTER TABLE `dpd_jenisanggota`
 --
 ALTER TABLE `dpd_keanggotaan`
   MODIFY `id_keanggotaan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4055;
+
+--
+-- AUTO_INCREMENT untuk tabel `dpd_luaslahan`
+--
+ALTER TABLE `dpd_luaslahan`
+  MODIFY `id_luaslahan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `dpd_struktural`

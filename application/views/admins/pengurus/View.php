@@ -21,7 +21,6 @@
                                 <th>Nama DPD</th>
                                 <th>Nama Pengurus</th>
                                 <th>Keterangan</th>
-                                <th>No HP</th>
                                 <th>ACT</th>
                             </tr>
                         </thead>
@@ -64,10 +63,10 @@
                         <label>Nama</label>
                         <input type="text" class="form-control" name="nama">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>No HP</label>
                         <input type="text" class="form-control" name="no_kta">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label class="d-block">Posisi</label>
                         <div class="custom-control custom-radio custom-control-inline">
@@ -117,10 +116,10 @@
                         <label>Nama</label>
                         <input type="text" class="form-control" name="nama" id="nama">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>No HP</label>
                         <input type="text" class="form-control" name="no_hp" id="no_hp">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label class="d-block">Posisi</label>
                         <div class="custom-control custom-radio custom-control-inline">
@@ -165,9 +164,6 @@
             },
             {
                 data: 'nama'
-            },
-            {
-                data: 'no_hp'
             },
             {
                 data: 'jenis'

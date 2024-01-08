@@ -67,7 +67,7 @@ class DataPengurus extends CI_Controller
                     );
                 }
             }
-            
+
 
             $insert = $this->db->insert_batch('dpd_struktural', $temp_data);
 
@@ -92,6 +92,11 @@ class DataPengurus extends CI_Controller
         } else {
             redirect(base_url('admin/datapengurus'), 'refresh');
         }
+    }
+    public function delete($args)
+    {
+        $this->db->delete('dpd_struktural', ['id_struktural' => $args]);
+        redirect(base_url('admin/datapengurus'), 'refresh');
     }
 }
 

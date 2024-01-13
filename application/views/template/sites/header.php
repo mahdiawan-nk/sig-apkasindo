@@ -5,7 +5,8 @@
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <img src="https://www.dpp-apkasindo.com/images/logo.png" alt="" class="w-75 mt-0">
+                        <img src="https://www.dpp-apkasindo.com/images/logo.png" alt="" class="w-100 mt-0 d-none d-lg-block">
+                        <img src="https://www.dpp-apkasindo.com/images/logo.png" alt="" class="w-75 mt-0 d-lg-none">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->

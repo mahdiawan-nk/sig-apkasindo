@@ -179,61 +179,61 @@
     <?php foreach ($data as $item) : ?>
         regency.push(<?= $item->kode_wilayah ?>)
     <?php endforeach ?>
-    // const colors = [
-    //     "#FF0000", // Merah
-    //     "#00FF00", // Hijau
-    //     "#0000FF", // Biru
-    //     "#FFFF00", // Kuning
-    //     "#FF00FF", // Ungu
-    //     "#00FFFF", // Cyan
-    //     "#FFA500", // Oranye
-    //     "#800080", // Ungu tua
-    //     "#008000", // Hijau tua
-    //     "#008080", // Biru-hijau
-    //     "#800025" // Merah tua
-    // ];
-    // regency.forEach((kode, i) => {
-    //     $.ajax({
-    //         url: '<?= base_url('maps/proxy') ?>',
-    //         method: 'GET',
-    //         data: {
-    //             url: `https://seta.silaper.com/assets/wilayah-indonesia-master/data/geojson/regency/${kode}.geojson`
-    //         },
-    //         success: function(data) {
-    //             map.addSource('riau' + i, {
-    //                 'type': 'geojson',
-    //                 'data': data.features[0]
-    //             });
+    const colors = [
+        "#FF0000", // Merah
+        "#00FF00", // Hijau
+        "#0000FF", // Biru
+        "#FFFF00", // Kuning
+        "#FF00FF", // Ungu
+        "#00FFFF", // Cyan
+        "#FFA500", // Oranye
+        "#800080", // Ungu tua
+        "#008000", // Hijau tua
+        "#008080", // Biru-hijau
+        "#800025" // Merah tua
+    ];
+    regency.forEach((kode, i) => {
+        $.ajax({
+            url: '<?= base_url('maps/proxy') ?>',
+            method: 'GET',
+            data: {
+                url: `https://seta.silaper.com/assets/wilayah-indonesia-master/data/geojson/regency/${kode}.geojson`
+            },
+            success: function(data) {
+                map.addSource('riau' + i, {
+                    'type': 'geojson',
+                    'data': data.features[0]
+                });
 
-    //             // Add a new layer to visualize the polygon.
-    //             map.addLayer({
-    //                 'id': 'riau' + i,
-    //                 'type': 'fill',
-    //                 'source': 'riau' + i, // reference the data source
-    //                 'layout': {},
-    //                 'paint': {
-    //                     'fill-color': colors[i], // blue color fill
-    //                     'fill-opacity': 0.5
-    //                 }
-    //             });
-    //             // Add a black outline around the polygon.
-    //             map.addLayer({
-    //                 'id': 'outline' + i,
-    //                 'type': 'line',
-    //                 'source': 'riau' + i,
-    //                 'layout': {},
-    //                 'paint': {
-    //                     'line-color': '#fff',
-    //                     'line-width': 1
-    //                 }
-    //             });
+                // Add a new layer to visualize the polygon.
+                map.addLayer({
+                    'id': 'riau' + i,
+                    'type': 'fill',
+                    'source': 'riau' + i, // reference the data source
+                    'layout': {},
+                    'paint': {
+                        'fill-color': colors[i], // blue color fill
+                        'fill-opacity': 0.5
+                    }
+                });
+                // Add a black outline around the polygon.
+                map.addLayer({
+                    'id': 'outline' + i,
+                    'type': 'line',
+                    'source': 'riau' + i,
+                    'layout': {},
+                    'paint': {
+                        'line-color': '#fff',
+                        'line-width': 1
+                    }
+                });
 
-    //         },
-    //         error: function(xhr, status, error) {
-    //             console.error(error); // Menangani kesalahan jika terjadi
-    //         }
-    //     });
-    // });
+            },
+            error: function(xhr, status, error) {
+                console.error(error); // Menangani kesalahan jika terjadi
+            }
+        });
+    });
 
 
 

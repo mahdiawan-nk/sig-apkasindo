@@ -35,10 +35,6 @@
                                 <div class="content">
                                     <h4><?= $item->nama_dpd ?></h4>
                                     <div class="row">
-                                        <div class="col-6 mb-2 d-flex flex-row">
-                                            <i class="fa fa-users p-2"></i>
-                                            <span class="list">5 Days</span>
-                                        </div>
                                         <div class="col-12 d-flex flex-row">
                                             <i class="fa fa-location-dot p-2"></i>
                                             <span class="list fs-6 ">

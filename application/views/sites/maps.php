@@ -275,6 +275,9 @@
                                     <li class="list-group-item">Alamat : ` + '<?= $list->alamat ?>' + `</li>
                                 </ul>
                             </div>
+                            <div class="card-footer">
+                                <a href="<?=base_url('maps?kode='.$list->kode_wilayah)?>">Lihat Selengkapnya</a>                            
+                            </div>
                     </div>`);
         elmt = document.createElement('div');
         elmt.className = 'marker';

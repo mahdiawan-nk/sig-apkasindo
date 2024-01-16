@@ -20,6 +20,9 @@
                                 <th>#</th>
                                 <th>Nama DPD</th>
                                 <th>Tahun</th>
+                                <th>TBM</th>
+                                <th>TM</th>
+                                <th>TTR</th>
                                 <th>Luas Lahan</th>
                                 <th>ACT</th>
                             </tr>
@@ -30,6 +33,9 @@
                                     <th scope="row"><?= $index + 1 ?></th>
                                     <td><?= $item->nama_dpd ?></td>
                                     <td><?= $item->tahun ?></td>
+                                    <td><?= $item->tbm ?></td>
+                                    <td><?= $item->tm ?></td>
+                                    <td><?= $item->ttr ?></td>
                                     <td><?= $item->luas_lahan ?></td>
                                     <td>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
@@ -60,7 +66,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('admin/datakebun/save') ?>" method="POST">
+            <form action="<?= base_url('admin/datakebun/save') ?>" method="POST" id="form-add">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="">Wilayah DPD</label>
@@ -76,8 +82,20 @@
                         <input type="text" class="form-control" name="tahun">
                     </div>
                     <div class="form-group">
+                        <label>Luas Lahan TBM</label>
+                        <input type="text" class="form-control count" name="tbm" id="tbm">
+                    </div>
+                    <div class="form-group">
+                        <label>Luas Lahan TM</label>
+                        <input type="text" class="form-control count" name="tm" id="tm">
+                    </div>
+                    <div class="form-group">
+                        <label>Luas Lahan TTR</label>
+                        <input type="text" class="form-control count" name="ttr" id="ttr">
+                    </div>
+                    <div class="form-group">
                         <label>Luas Lahan</label>
-                        <input type="text" class="form-control" name="luas_lahan">
+                        <input type="text" class="form-control total" name="luas_lahan">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -114,8 +132,20 @@
                             <input type="text" class="form-control" name="tahun" value="<?= $item->tahun ?>">
                         </div>
                         <div class="form-group">
+                            <label>Luas Lahan TBM</label>
+                            <input type="text" class="form-control ecount" name="tbm" value="<?= $item->tbm ?>" id="etbm">
+                        </div>
+                        <div class="form-group">
+                            <label>Luas Lahan TM</label>
+                            <input type="text" class="form-control ecount" name="tm" value="<?= $item->tm ?>" id="etm">
+                        </div>
+                        <div class="form-group">
+                            <label>Luas Lahan TTR</label>
+                            <input type="text" class="form-control ecount" name="ttr" value="<?= $item->ttr ?>" id="ettr">
+                        </div>
+                        <div class="form-group">
                             <label>Luas Lahan</label>
-                            <input type="text" class="form-control" name="luas_lahan" value="<?= $item->luas_lahan ?>">
+                            <input type="text" class="form-control etotal" name="luas_lahan" value="<?= $item->luas_lahan ?>">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -129,7 +159,9 @@
 <?php endforeach ?>
 <script>
     $('#data-table').DataTable();
-
+    $('add').on('show.bs.modal',function(){
+        $('form#form-add')[0].reset();
+    })
     function deleted(args) {
         Swal.fire({
             title: "Are you sure?",
@@ -145,4 +177,32 @@
             }
         });
     }
+    // $(function() {
+    //     $(".count").on("keyup", function() {
+    //         // Mengambil nilai dari ketiga input
+    //         var sum=0
+    //         var value1 = parseFloat($("#tbm").val()) || 0;
+    //         var value2 = parseFloat($("#tm").val()) || 0;
+    //         var value3 = parseFloat($("#ttr").val()) || 0;
+
+    //         // Menghitung jumlah dari ketiga input
+    //         sum = value1 + value2 + value3;
+
+    //         // Menampilkan hasil pada elemen dengan id "sum"
+    //         $(".total").val(sum);
+    //     });
+    //     $(".ecount").on("keyup", function() {
+    //         var esum=0
+    //         var evalue1 = parseFloat($("#etbm").val()) || 0;
+    //         var evalue2 = parseFloat($("#etm").val()) || 0;
+    //         var evalue3 = parseFloat($("#ettr").val()) || 0;
+
+    //         // Menghitung jumlah dari ketiga input
+    //         esum = evalue1 + evalue2 + evalue3;
+
+    //         // Menampilkan hasil pada elemen dengan id "sum"
+    //         // $(".etotal").val(esum);
+    //         console.log(esum)
+    //     });
+    // });
 </script>

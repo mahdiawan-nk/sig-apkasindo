@@ -4,9 +4,16 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img src="https://www.dpp-apkasindo.com/images/logo.png" alt="" class="w-100 mt-0 d-none d-lg-block">
-                        <img src="https://www.dpp-apkasindo.com/images/logo.png" alt="" class="w-75 mt-0 d-lg-none">
+                    <a href="<?= base_url() ?>" class="logo">
+                        <div class="d-flex flex-row mb-3">
+                            <img src="<?= base_url('assets/sites/assets/images/bg-3.png') ?>" alt="" class="mt-0 d-none d-lg-block" style="width:17% !important">
+                            <img src="<?= base_url('assets/sites/assets/images/bg-3.png') ?>" alt="" class="mt-0 d-lg-none ms-5" style="width:10% !important">
+                            <div class="p-1 my-auto">
+                                <h4 class="fw-bold text-white fs-5 d-none d-lg-block">Informasi Pemetaan Lokasi Kantor Apkasindo</h4>
+                                <h4 class="fw-bold text-white fs-6 d-lg-none">Informasi Pemetaan Lokasi Kantor Apkasindo</h4>
+                            </div>
+                        </div>
+
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->

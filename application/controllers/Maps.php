@@ -29,9 +29,21 @@ class Maps extends CI_Controller
             }
         }
         $data['data'] = json_decode(json_encode($dataWilayah));
-        $data['halaman'] = 'sites/maps';
+        if($kode){
+            $this->db->where('kode_wilayah', $kode);
+            $idWilayah = $this->db->get('dpd_wilayah')->row()->id_dpd; 
+            $data['lahan']=$this->db->get_where('dpd_luaslahan',['id_dpd'=>$idWilayah])->result();
+            
+            $data['halaman'] = 'sites/details';
+        }else{
+            $data['halaman'] = 'sites/maps';
+        }
+        
         $this->load->view('template/sites/main', $data);
+        
     }
+
+
 
     public function proxy()
     {

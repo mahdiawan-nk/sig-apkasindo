@@ -4,7 +4,7 @@
 
         <div class="navbar-brand-box">
             <a href="index.html" class="logo">
-                <img src="https://www.dpp-apkasindo.com/images/logo.png" class="w-75" style="height:50px" />
+                <img src="<?=base_url('assets/sites/assets/images/bg-2.jpg')?>" class="w-50" style="height:65px" />
             </a>
         </div>
 

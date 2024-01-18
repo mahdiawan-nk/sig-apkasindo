@@ -135,9 +135,9 @@
                         <h4 class="card-header"><?= $maps->nama_dpd ?></h4>
                         <ul class="list-group list-group-flush">
                             <?php foreach ($maps->struktural as $str) : ?>
-                                <li class="list-group-item" <?= $str->jenis == 'Ketua' ? '' : 'hidden' ?>>Ketua : <br><?= $str->nama ?> <br><?= $str->no_hp ?></li>
-                                <li class="list-group-item" <?= $str->jenis == 'Sekretaris' ? '' : 'hidden' ?>>Sekretaris : <br><?= $str->nama ?> <br><?= $str->no_hp ?></li>
-                                <li class="list-group-item" <?= $str->jenis == 'Bendahara' ? '' : 'hidden' ?>>Bendahara : <br><?= $str->nama ?> <br><?= $str->no_hp ?></li>
+                                <li class="list-group-item" <?= $str->jenis == 'Ketua' ? '' : 'hidden' ?>>Ketua : <br><?= $str->nama ?></li>
+                                <li class="list-group-item" <?= $str->jenis == 'Sekretaris' ? '' : 'hidden' ?>>Sekretaris : <br><?= $str->nama ?></li>
+                                <li class="list-group-item" <?= $str->jenis == 'Bendahara' ? '' : 'hidden' ?>>Bendahara : <br><?= $str->nama ?></li>
                             <?php endforeach ?>
                         </ul>
                         <div class="card-footer">

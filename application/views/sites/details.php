@@ -35,11 +35,11 @@
 <div class="reservation-form">
     <div class="container">
         <div class="row">
-            <!-- <div class="col-lg-12">
+            <div class="col-lg-12">
                 <div class="map-container">
                     <div id="map" class="map"></div>
                 </div>
-            </div> -->
+            </div>
             <div class="col-lg-12">
                 <form id="reservation-form" name="gs" method="submit" role="search" action="#">
                     <?php foreach ($data as $maps) : ?>

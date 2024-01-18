@@ -20,7 +20,7 @@
                     <ul class="nav">
                         <li><a href="<?= base_url() ?>" class="active">Home</a></li>
                         <li><a href="<?= base_url('list-dpd') ?>">DPD Apkasindo</a></li>
-                        <li><a href="<?= base_url('statistik') ?>">Staistik Perkebunan</a></li>
+                        <li><a href="<?= base_url('statistik') ?>">Statistik Perkebunan</a></li>
                         <!-- <li><a href="<?= base_url() ?>" class="active">Home</a></li> -->
                     </ul>
                     <a class='menu-trigger'>

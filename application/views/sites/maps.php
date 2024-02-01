@@ -194,11 +194,8 @@
     ];
     regency.forEach((kode, i) => {
         $.ajax({
-            url: '<?= base_url('maps/proxy') ?>',
+            url: `https://seta.silaper.com/assets/wilayah-indonesia-master/data/geojson/regency/${kode}.geojson`,
             method: 'GET',
-            data: {
-                url: `https://seta.silaper.com/assets/wilayah-indonesia-master/data/geojson/regency/${kode}.geojson`
-            },
             success: function(data) {
                 map.addSource('riau' + i, {
                     'type': 'geojson',

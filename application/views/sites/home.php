@@ -52,7 +52,7 @@
                     <div class="main-caption">
                         <h2>selamat Datang Di Sistem Pemetaan Apkasindo </h2>
                         <h1>Region Riau</h1>
-                        <div class="border-button"><a href="<?= base_url('maps') ?>">Go Maps</a></div>
+                        <div class="border-button"><a href="<?= base_url('maps') ?>">Go Maps </a></div>
                     </div>
                     <div class="container">
                         <div class="row">
@@ -148,7 +148,7 @@
                     <div class="main-caption">
                         <h2>selamat Datang Di Sistem Pemetaan Apkasindo </h2>
                         <h1>Region Riau</h1>
-                        <div class="border-button"><a href="<?= base_url('maps') ?>">Go Maps</a></div>
+                        <div class="border-button"><a href="<?= base_url('maps') ?>">Go Mapss</a></div>
                     </div>
                     <div class="container">
                         <div class="row">
